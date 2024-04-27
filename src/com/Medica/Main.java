@@ -1,7 +1,5 @@
 package com.Medica;
 
-
-
 import com.Medica.model.User;
 import com.Medica.model.Medication;
 import com.Medica.controller.MedicationController;
@@ -14,8 +12,14 @@ public class Main {
         // Create user instance
         User user = new User("JohnDoe", "securepassword123");
 
-        // Create a medication controller with a simple reminder factory
-        MedicationController medicationController = new MedicationController(new SimpleReminderFactory());
+         // Initialize the reminder factory
+         SimpleReminderFactory reminderFactory = new SimpleReminderFactory();
+
+         // Create a medication controller with the reminder factory
+         MedicationController medicationController = new MedicationController(reminderFactory);
+         
+        // // Create a medication controller with a simple reminder factory
+        // MedicationController medicationController = new MedicationController(new SimpleReminderFactory());
 
         // Create a medication instance
         Medication medication = new Medication("Amoxicillin", 500, "mg", LocalDateTime.now().plusHours(6));

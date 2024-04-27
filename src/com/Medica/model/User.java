@@ -1,7 +1,5 @@
 package com.Medica.model;
 
-
-
 public class User {
     private String username;
     private String password; // Note: In a real application, passwords should be securely hashed!
